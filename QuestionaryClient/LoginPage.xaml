@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="QuestionaryClient.LoginPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Storyboard x:Key="errorAnim" Storyboard.TargetName="errorMsg">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.5" DecelerationRatio="0.9"></DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.5" DecelerationRatio="0.9" BeginTime="0:0:2.5"></DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Key="succAnim" Storyboard.TargetName="errorMsg">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.5" DecelerationRatio="0.9"></DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1" DecelerationRatio="0.9" BeginTime="0:0:1"></DoubleAnimation>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Name:"></TextBlock>
+            <TextBox Name="jmeno" KeyUp="jmeno_KeyUp"></TextBox>
+            <TextBlock Text="Surname:"></TextBlock>
+            <TextBox Name="prijmeni" KeyUp="jmeno_KeyUp"></TextBox>
+            <TextBlock Name="errorMsg" Text="Message" Foreground="Red" Opacity="0" FontFamily="Segoe WP" FontStyle="Italic"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

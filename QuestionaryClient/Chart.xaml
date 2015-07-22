@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="QuestionaryClient.Chart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Grid x:Key="rectangle">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.8*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+                <Rectangle x:Name="rect" Grid.Column="0" Grid.Row="0" RadiusX="5" RadiusY="5" Height="20" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                    <Rectangle.Effect>
+                        <DropShadowEffect x:Name="col3" Direction="0" ShadowDepth="0" Color="#FF7C1010"/>
+                    </Rectangle.Effect>
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop x:Name="col1" Color="#FF660E0E" Offset="1"/>
+                            <GradientStop x:Name="col2" Color="#FF9B4242"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock Grid.Column="1" Text="30%" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+        </Grid>
+        
+    </UserControl.Resources>
+    <Grid>
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical"  Name="desc" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
